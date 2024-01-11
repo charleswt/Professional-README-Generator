@@ -15,8 +15,8 @@ function renderLicenseBadge(data) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
-  if (data.license === 'MIT' || `Apache-2.0` || `GPL-3.0`) {
-    return `[MIT License]https://github.com/${data.handle}/${data.title}/blob/main/LICENSE)`;
+  if (data.license === 'MIT' || data.license === 'Apache-2.0' || data.license === 'GPL-3.0') {
+    return `[${data.license} License](https://github.com/${data.handle}/${data.title}/blob/main/LICENSE)`;
   } else {
     return '';
   }
@@ -25,19 +25,22 @@ function renderLicenseLink(data) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
-  if (data.license) {
+  if (data.license === 'None') {
+    return '';
+  } else {
     return `## License
 
-This project is licensed under the ${data.license} License. See the [LICENSE](${renderLicenseLink(data.license)}) file for details.`;
+This project is licensed under the ${data.license} License. See the [LICENSE](${renderLicenseLink(data)}) file for details.`;
   }
 }
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title} ${renderLicenseBadge(data.license)}
+  return `# ${data.title} ${renderLicenseBadge(data)}
 
 ## Description
 
-  ${data.description}
+${data.description}
 
 ## Table of Contents
 
@@ -50,26 +53,25 @@ function generateMarkdown(data) {
 
 ## Installation
 
-  ${data.installation}
+${data.installation}
 
 ## Usage
 
-  ${data.usage}
+${data.usage}
 
-  ${renderLicenseSection(data.license)}
+${renderLicenseSection(data)}
 
 ## Contributing
 
-  This project was developed by [${data.name}](https://github.com/${data.handle}/).
+This project was developed by [${data.name}](https://github.com/${data.handle}/).
 
 ## Tests
 
-  ${data.tests}
+${data.tests}
 
 ## Questions
 
-If you have any questions or suggestions, feel free to email me.
-  ${data.email}
+If you have any questions or suggestions, feel free to email me at ${data.email}.
 
 `;
 }
