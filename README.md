@@ -15,7 +15,7 @@ This program generates a well-structured README.md with just a few steps!
 
 ## Installation
 
-1. Git clone this repo <br> 2. Make a git ignore and add node_modules to it <br> 3. Open the integrated terminal and execute "npm i inquirer@8.2.4" <br> 4. Then execute "node index.js" and follow the prompt
+1. Git clone this repo<br>2. Make a git ignore and add node_modules to it<br>3. Open the integrated terminal and execute "npm i inquirer@8.2.4"<br>4. Then execute "node index.js" and follow the prompt
 
 ## Usage
 
