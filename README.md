@@ -23,7 +23,7 @@ When you have filled out all the information a professional README.md file will 
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE]([MIT License](https://github.com/charleswt/Professional-README-Generator /blob/main/LICENSE)) file for details.
+This project is licensed under the MIT License. See the [MIT License](https://github.com/charleswt/Professional-README-Generator /blob/main/LICENSE) file for details.
 
 ## Contributing
 

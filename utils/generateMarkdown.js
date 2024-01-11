@@ -16,7 +16,7 @@ function renderLicenseBadge(data) {
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
   if (data.license === 'MIT' || data.license === 'Apache-2.0' || data.license === 'GPL-3.0') {
-    return `[${data.license} License](https://github.com/${data.handle}/${data.title}/blob/main/LICENSE)`;
+    return `[${data.license}](https://github.com/${data.handle}/${data.title}/blob/main/LICENSE)`;
   } else {
     return '';
   }
@@ -26,11 +26,13 @@ function renderLicenseLink(data) {
 // If there is no license, return an empty string
 function renderLicenseSection(data) {
   if (data.license === 'None') {
-    return '';
+    return `## License
+
+    N/A`;
   } else {
     return `## License
 
-This project is licensed under the ${data.license} License. See the [LICENSE](${renderLicenseLink(data)}) file for details.`;
+This project is licensed under the ${data.license} License. See the ${renderLicenseLink(data)} file for details.`;
   }
 }
 
